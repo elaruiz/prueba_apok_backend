@@ -3,7 +3,7 @@
 var app = require('./app'),
 	mongoose = require('mongoose')
 	
-mongoose.connect(process.env.MONGODB || 'mongodb://localhost:27017/prueba', (err, res) => {
+mongoose.connect(process.env.MONGODB || 'mongodb://localhost:27017/prueba1', (err, res) => {
 	if (err) {
 		return console.log(`Error al conectar a la BD: ${err}`)
 	}

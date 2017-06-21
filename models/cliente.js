@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+var Acceso = require('../models/acceso.js')
 
 var ClienteSchema = new Schema ({
 	nombre: String,
@@ -10,11 +11,7 @@ var ClienteSchema = new Schema ({
 	email: {type: String, unique: true, lowercase:true},
 	direccion: String,
 	contacto: String,
-	accesos: [{
-	  url:  String,
-	  username: String,
-	  password: String
-	}]
+	accesos:  [{ type: Schema.ObjectId, ref: 'Acceso' }]
 })
 
 module.exports = mongoose.model('Cliente', ClienteSchema)
